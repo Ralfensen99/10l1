@@ -1,0 +1,40 @@
+ANALISI LIBRERIE
+KERNEL32.DLL: Questo è il core, il cuore cibernetico del sistema operativo Windows. Le sue sinapsi controllano la memoria, dirigono i processi e orchestrano il balletto dei thread. Ogni eseguibile Windows attinge dalla sua fonte di potere.
+
+ADVAPI32.dll: Qui si trova la chiave maestra della sicurezza digitale. Token, registri, autenticazione: tutto ciò che serve per accedere ai tesori digitali protetti. Solo per i privilegiati, solo per coloro che navigano nelle zone più oscure della rete.
+
+MSVCRT.dll: Questa è la scatola degli attrezzi, il kit di sopravvivenza per i programmatori delle strade digitali. Input, output, stringhe: gli strumenti essenziali per sopravvivere nel deserto binario. Ogni eseguibile C o C++ dipende dalla sua grinta.
+
+WININET.dll: Questo è il gateway, la porta verso l'oceano cibernetico. Qui, le onde di dati si infrangono, le richieste HTTP si librano nell'aria e i file scivolano attraverso la rete. Solo chi ha il coraggio di navigare nell'infinito mare digitale si avventura qui.
+ANALISI SEZIONI
+Nome: Identifica il nome della sezione.
+Dimensione virtuale: Indica la dimensione della sezione in memoria virtuale.
+Indirizzo virtuale: Indica l'indirizzo di base della sezione in memoria virtuale.
+Dimensione effettiva: Indica la dimensione effettiva della sezione in memoria fisica.
+Indirizzo effettivo: Indica l'indirizzo di base della sezione in memoria fisica.
+Indirizzo di rilocamento: Indica l'indirizzo di base della tabella di rilocamento per la sezione.
+Numeri di riga: Indica il numero di righe nella tabella di rilocamento per la sezione.
+Rielaborazioni: Indica il numero di rilocazioni nella tabella di rilocamento per la sezione.
+Numeri di riga: Indica il numero di righe nella tabella dei numeri di riga per la sezione.
+Caratteristiche: Indica le caratteristiche della sezione.
+Le sezioni elencate nella tabella sono:
+
+UPX0: Questa sezione contiene il codice di decompressione UPX. UPX è un packer di file eseguibili che comprime i file eseguibili per ridurne le dimensioni.
+UPX1: Questa sezione contiene i dati decompressi dall'UPX0.
+UPX2: Questa sezione contiene il codice di esecuzione del malware.
+In base a queste informazioni, è possibile concludere che il malware è stato pacchettato utilizzando UPX per ridurre le sue dimensioni. Ciò potrebbe essere stato fatto per rendere più difficile l'analisi del malware o per nascondere la sua vera natura.
+CONSIDERAZIONI FINALI
+Ci troviamo d'avanti ad un malware particolarmente complesso che non ci consente di avere buoni risultati con l'analisi statica basica.
+Un malware che utilizza le funzioni LoadLibrary e GetProcAddress è tipicamente progettato per caricare dinamicamente librerie e funzioni API di Windows durante l'esecuzione. Questo gli permette di:
+
+Evitare il rilevamento: Caricando le librerie e le funzioni API di Windows in modo dinamico, il malware può rendere più difficile per gli antivirus e altri software di sicurezza identificarlo. Questo perché il malware non contiene direttamente queste librerie e funzioni nel proprio codice, il che lo rende più difficile da scansionare.
+Eseguire codice dannoso: Una volta caricate le librerie e le funzioni API di Windows, il malware può utilizzarle per eseguire una varietà di azioni dannose, come ad esempio:
+Rubare dati: Il malware può utilizzare le API di Windows per accedere a file sensibili, come password, dati finanziari e informazioni personali.
+Installare backdoor: Il malware può utilizzare le API di Windows per installare backdoor sul sistema infetto, che consentono agli hacker di accedere e controllare il sistema in remoto.
+Diffondere malware: Il malware può utilizzare le API di Windows per diffondere se stesso ad altri sistemi sulla rete.
+Esempi di malware che utilizzano LoadLibrary e GetProcAddress:
+
+Trojan: I Trojan sono un tipo di malware che si maschera da software legittimo per ingannare gli utenti a installarli. Una volta installato, un Trojan può utilizzare LoadLibrary e GetProcAddress per caricare le librerie e le funzioni API di Windows necessarie per eseguire le sue azioni dannose.
+Worm: I worm sono un tipo di malware che si autoreplica e si diffonde da un sistema all'altro. Possono utilizzare LoadLibrary e GetProcAddress per caricare le librerie e le funzioni API di Windows necessarie per replicare se stessi e diffondersi sulla rete.
+Botnet: Le botnet sono reti di computer infetti che vengono controllati da un hacker centrale. Possono utilizzare LoadLibrary e GetProcAddress per caricare le librerie e le funzioni API di Windows necessarie per eseguire gli ordini dell'hacker, come ad esempio l'invio di spam o l'esecuzione di attacchi DDoS.
+Purtroppo da questi dati non possiamo oltre a semplici presupposizioni.
